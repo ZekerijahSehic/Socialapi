@@ -16,7 +16,6 @@ public class UserService {
     private UserRepository repository;
 
     public List<User> getAllUsers() {
-
         List<User> users = new ArrayList<>();
         repository.findAll().forEach(users::add);
         return users;

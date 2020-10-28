@@ -9,19 +9,19 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-//@RestController
-@Controller
+@RestController
+//@Controller
 public class UserController {
 
     @Autowired
     private UserService service;
 
     @RequestMapping(value = "/users")
-    public String getAllUsers(Model model){
-        //return service.getAllUsers();
-        List<User> listUsers = service.getAllUsers();
-        model.addAttribute("usersList", listUsers);
-        return "users";
+    public List<User> getAllUsers(Model model){
+        return service.getAllUsers();
+        //List<User> listUsers = service.getAllUsers();
+        //model.addAttribute("usersList", listUsers);
+        //return "users";
     }
 
     @RequestMapping(value = "/user/{id}")
